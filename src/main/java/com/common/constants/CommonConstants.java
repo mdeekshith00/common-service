@@ -14,7 +14,7 @@ public class CommonConstants {
 	public static final String USER_DETAILS_NOTFOUND_ID = "User details Not Found With Given Id: ";
 	
 	public static final String REFRESH_TOKEN_NOT_FOUND =  "Refresh token not found or invalid.";
-//	public static final String
+	public static final String USER_CREATED_SUCESSFULLY = " USER created Sucessfully:";
 //	
 //	public static final String
 //	public static final String
