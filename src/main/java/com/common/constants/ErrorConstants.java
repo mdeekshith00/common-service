@@ -39,6 +39,10 @@ public class ErrorConstants {
 		public static final String ROLE_NOT_FOUND = "role not found exception";
 		public static final String USER_DETAILS_NOT_FOUND = "User Deatils Not Found On This ID:";
 		public static final String USER_NOT_IN_ACTIVE = "User Not in Active State";
+		// role 
+		public static final String ROLE_DETAILS_NOT_FOUND = "Role Deatils Not Found On This User:";
+		// donor-service
+		public static final String DONOR_DETAILS_NOT_FOUND = "Donor Details Not Found";
 
 
 }
