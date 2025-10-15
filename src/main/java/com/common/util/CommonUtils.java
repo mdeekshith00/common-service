@@ -1,6 +1,8 @@
 //package com.common.util;
 //
+//import com.common.exception.BloodBankBusinessException;
 //import com.fasterxml.jackson.core.JsonProcessingException;
+//
 //import lombok.extern.slf4j.Slf4j;
 //
 //@Slf4j
@@ -13,7 +15,7 @@
 //		log.debug("verifyFields are: {}, {}, {} :", fieldName, firstfield, secondField);
 //	          if((firstfield == null || secondField == null) || firstfield.equalsIgnoreCase(secondField)) {
 //	        	  log.info("comparing firstField and secondfiled :" );
-//	        	  throw new DetailsNotFoundException("session verifyId failed you are not an existing user :" + fieldName);
+//	        	  throw new BloodBankBusinessException("session verifyId failed you are not an existing user :" + fieldName);
 //	          }
 //	}
 //	private static SessionResponseVo sessionResponse() {

@@ -24,12 +24,12 @@ import jakarta.servlet.http.HttpServletRequest;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 	
-	private ErrorResponse buildErrorDetails(String errorCode, String errorMessage, String category, String severity, List<?> errors) {
+	private ErrorResponse buildErrorDetails(String errorCode, String errorMessage, List<?> errors) {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage(errorMessage);
 		errorResponse.setCode(errorCode);
-		errorResponse.setCategory(category);
-		errorResponse.setSeverity(severity);
+//		errorResponse.setCategory(category);
+//		errorResponse.setSeverity(severity);
 		if(errors != null && !errors.isEmpty()) {
 			errorResponse.setErrors(errors);
 		}
@@ -38,13 +38,13 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(BloodBankRuntimeException.class)
 	public ResponseEntity<BaseVO> handleZmaterRuntimeException(BloodBankRuntimeException ex, WebRequest request) {
-		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getCategory(), ex.getSeverity(), ex.getErrors());
+		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getErrors());
 		return ResponseEntity.status(ex.getHttpStatus()).body(errorDetails);
 	}
 
 	@ExceptionHandler(BloodBankBusinessException.class)
 	public ResponseEntity<BaseVO> handleZmaterBusinessException(BloodBankBusinessException ex, WebRequest request) {
-		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getCategory(), ex.getSeverity(), ex.getErrors());
+		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getErrors());
 		return ResponseEntity.status(ex.getHttpStatus()).body(errorDetails);
 	}
 

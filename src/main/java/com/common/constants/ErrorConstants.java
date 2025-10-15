@@ -39,10 +39,25 @@ public class ErrorConstants {
 		public static final String ROLE_NOT_FOUND = "role not found exception";
 		public static final String USER_DETAILS_NOT_FOUND = "User Deatils Not Found On This ID:";
 		public static final String USER_NOT_IN_ACTIVE = "User Not in Active State";
+		public static final String USER_DETAILS_EXISTS = "User already Exists :";
+		public static final String USER_DETAILS_ALREADY_EXISTS = "User already Exists :";
+		public static final String USER_NOT_EXISTS = "User Not in Active , to update password:";
+		
 		// role 
 		public static final String ROLE_DETAILS_NOT_FOUND = "Role Deatils Not Found On This User:";
 		// donor-service
 		public static final String DONOR_DETAILS_NOT_FOUND = "Donor Details Not Found";
+		public static final String ROLE_ALREADY_EXISTS = "Role Already Exists For This User..";
+		public static final String DONOR_HEALTH_CHECKUP_DETAILS_NOT_FOUND = "Donor Health Check Up  Details Not Found";
+		public static final String DONOR_REWARDS_DETAILS_NOT_FOUND = "Donor Rewards Details Not Found";
+		public static final String DONOR_LIFETSTYLE_PROFILE_DETAILS_NOT_FOUND = "DonorLife Style Profile Details Not Found:";
+		public static final String DONOTATION_SHOULD_NOT_BE_NULL = "Donation Blood Should Not be Null or Zero";
+//		public static final String DONOR_HEALTH_CHECK_DETAILS_NOT_FOUND = null;
+		
+		// DONATION SERVICE
+		public static final String DONATION_DETAILS_NOT_FOUND = "Donation Details Not Found";
+		public static final String LAB_DETAILS_NOT_FOUND = "Lab Details Not Found";
+		public static final String BLOOD_QUANTITY_INVALID = "Blood Quantity should be Greater than 10ml to split for test";
 
 
 }
