@@ -56,6 +56,7 @@ public class ErrorConstants {
 		
 		// DONATION SERVICE
 		public static final String DONATION_DETAILS_NOT_FOUND = "Donation Details Not Found";
+		public static final String BLOOD_SAMPLE_DETAILS_NOT_FOUND = "Blood Sample Details Not Found";
 		public static final String LAB_DETAILS_NOT_FOUND = "Lab Details Not Found";
 		public static final String BLOOD_QUANTITY_INVALID = "Blood Quantity should be Greater than 10ml to split for test";
 
