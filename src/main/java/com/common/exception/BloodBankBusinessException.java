@@ -3,8 +3,13 @@ package com.common.exception;
 import org.springframework.http.HttpStatus;
 
 public class BloodBankBusinessException extends BloodBankCustomException{
-//	@Deprecated
-	public BloodBankBusinessException(String errorMessage, HttpStatus status, String errorCode) {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5115988062462604998L;
+
+
+	public  BloodBankBusinessException(String errorMessage, HttpStatus status, String errorCode) {
 		super(errorMessage);
 		this.errorMessage = errorMessage;
 		this.httpStatus = status;

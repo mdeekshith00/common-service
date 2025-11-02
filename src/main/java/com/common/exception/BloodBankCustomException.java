@@ -21,8 +21,8 @@ public class BloodBankCustomException extends RuntimeException{
 	protected HttpStatus httpStatus;
 	protected String errorCode;
 	protected String errorMessage;
-	protected String severity;
-	protected String category;
+//	protected String severity;
+//	protected String category;
 	protected List<ErrorDetails> errors;
 
 	public BloodBankCustomException(String errorMessage) {
@@ -33,16 +33,16 @@ public class BloodBankCustomException extends RuntimeException{
 		this.httpStatus = exceptionKey.getStatus();
 		this.errorCode = exceptionKey.getCode();
 		this.errorMessage = exceptionKey.getDescription();
-		this.category = exceptionKey.getErrorCategory().name();
-		this.severity = exceptionKey.getErrorSeverity().name();
+//		this.category = exceptionKey.getErrorCategory().name();
+//		this.severity = exceptionKey.getErrorSeverity().name();
 	}
 
 	public BloodBankCustomException(ExceptionKeys exceptionKey, List<ErrorDetails> errorDetails) {
 		this.httpStatus = exceptionKey.getStatus();
 		this.errorCode = exceptionKey.getCode();
 		this.errorMessage = exceptionKey.getDescription();
-		this.category = exceptionKey.getErrorCategory().name();
-		this.severity = exceptionKey.getErrorSeverity().name();
+//		this.category = exceptionKey.getErrorCategory().name();
+//		this.severity = exceptionKey.getErrorSeverity().name();
 		this.errors = errorDetails;
 	}
 
