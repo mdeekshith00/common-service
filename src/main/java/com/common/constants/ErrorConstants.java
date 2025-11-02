@@ -59,6 +59,43 @@ public class ErrorConstants {
 		public static final String BLOOD_SAMPLE_DETAILS_NOT_FOUND = "Blood Sample Details Not Found";
 		public static final String LAB_DETAILS_NOT_FOUND = "Lab Details Not Found";
 		public static final String BLOOD_QUANTITY_INVALID = "Blood Quantity should be Greater than 10ml to split for test";
+		
+//		BLOOD -SERVICE
+		public static final String STORAGE_FULL = "Blood Bank Storage Full..Send to Another Blood Bank";
+		public static final String NO_STORAGE_UNIT = "No Storage Unit For this Blood Bank.";
+		public static final String INVALID_BLOOD_GROUP = "Invalid blood group";
+		public static final String INVALID_COMPONENT_TYPE = "Invalid Compoment Type of a Blood Test Tube..";
+		public static final String NO_BLOOD_COMPOMENTS = "No Blood Compoments for this Donation.";
+		public static final String ERROR_WHILE_PARSING = "Error While Pasring Object to String...";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
+		
 
 
 }

@@ -18,8 +18,11 @@ public enum StatusType {
 	
 	// blood sample 
 	COLLECTED,
-	LOST, SENT_TO_LAB, 
-	REJECTED
+	SENT_TO_LAB, 
+    TEST_PASSED,
+    TEST_FAILED,
+    SHIPPED,
+    STORED
 	
 	
 
