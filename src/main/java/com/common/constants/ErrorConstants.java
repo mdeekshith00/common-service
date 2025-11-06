@@ -40,7 +40,7 @@ public class ErrorConstants {
 		public static final String USER_DETAILS_NOT_FOUND = "User Deatils Not Found On This ID:";
 		public static final String USER_NOT_IN_ACTIVE = "User Not in Active State";
 		public static final String USER_DETAILS_EXISTS = "User already Exists :";
-		public static final String USER_DETAILS_ALREADY_EXISTS = "User already Exists :";
+		public static final String USER_DETAILS_ALREADY_EXISTS = "User already Exists,  with same Mobile Number :";
 		public static final String USER_NOT_EXISTS = "User Not in Active , to update password:";
 		
 		// role 
