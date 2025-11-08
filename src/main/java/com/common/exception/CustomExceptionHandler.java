@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @RestControllerAdvice
 //@Order(Ordered.HIGHEST_PRECEDENCE)
-public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
+public class CustomExceptionHandler  {
 	
 	private ErrorResponse buildErrorDetails(String errorCode, String errorMessage, List<?> errors) {
 		ErrorResponse errorResponse = new ErrorResponse();
