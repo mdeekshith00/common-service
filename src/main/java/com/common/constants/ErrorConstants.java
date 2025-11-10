@@ -35,13 +35,19 @@ public class ErrorConstants {
 		public static final String INVALID_DETAILS_FOR_REVIEW = "Provided details for submitting a review are not valid";
 		
 		
-           
+//        USER-SERVICE
 		public static final String ROLE_NOT_FOUND = "role not found exception";
 		public static final String USER_DETAILS_NOT_FOUND = "User Deatils Not Found On This ID:";
 		public static final String USER_NOT_IN_ACTIVE = "User Not in Active State";
 		public static final String USER_DETAILS_EXISTS = "User already Exists :";
 		public static final String USER_DETAILS_ALREADY_EXISTS = "User already Exists, with same Mobile Number :";
 		public static final String USER_NOT_EXISTS = "User Not in Active , to update password:";
+		public static final String USERNAME_SHOULD_REQUIRED = "Username is manditory to register...";
+		public static final String PASSWORD_SHOILD_REQUIRED = "Password is manditory to register...";
+		public static final String EMAIL_SHOULD_REQUIRED = "Email is Manditory to register..";
+		public static final String PASSWORD_MISMATCH = "Password mis-match with re-entered password...";
+		public static final String INCORRECT_PASSWORD = "Invalid Password , Please Enter Correct Password...";
+//		public static final String DONATION_DETAILS_NOT_FOUND = "";
 		
 		// role 
 		public static final String ROLE_DETAILS_NOT_FOUND = "Role Deatils Not Found On This User:";

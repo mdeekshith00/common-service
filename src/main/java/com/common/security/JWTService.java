@@ -21,7 +21,6 @@ public class JWTService {
 //    @Value("${jwt.secret}")
     private final  String secretKey = "q3F6BxZ1CZHb+y4Yw3qgRkz9C5Vql0Yq3zRZbS1yR6w=";
 
-//    @Value("${jwt.expiration}")
     private long expirationMs = 36000;
 
     private Key getSignKey() {
