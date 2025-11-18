@@ -18,6 +18,7 @@ public class BloodBankCustomException extends RuntimeException{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	protected HttpStatus httpStatus;
 	protected String errorCode;
 	protected String errorMessage;
@@ -25,9 +26,12 @@ public class BloodBankCustomException extends RuntimeException{
 //	protected String category;
 	protected List<ErrorDetails> errors;
 
-	public BloodBankCustomException(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
+    public BloodBankCustomException(String messageError, HttpStatus status, String errorCode) {
+        super(messageError);
+        this.errorMessage = messageError;
+        this.httpStatus = status;
+        this.errorCode = errorCode;
+    }
 
 	public BloodBankCustomException(ExceptionKeys exceptionKey) {
 		this.httpStatus = exceptionKey.getStatus();
@@ -45,5 +49,16 @@ public class BloodBankCustomException extends RuntimeException{
 //		this.severity = exceptionKey.getErrorSeverity().name();
 		this.errors = errorDetails;
 	}
+    public HttpStatus getHttpStatus() {
+        return httpStatus;
+    }
+
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
 
 }
