@@ -14,7 +14,16 @@ public enum StatusType {
 //	DonorRewards status type
 	USED, 
 	EXPIRED,
-	REVOKED
+	REVOKED,
+	
+	// blood sample 
+	COLLECTED,
+	SENT_TO_LAB, 
+    TEST_PASSED,
+    TEST_FAILED,
+    SHIPPED,
+    STORED
+	
 	
 
 }
