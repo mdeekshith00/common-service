@@ -19,5 +19,6 @@ public class DonorCreateRequestDto {
     private String phoneNumber;
     private String gender;
     private LocalDate dateOfBirth;
+    private String BloodGroup;
 
 }
