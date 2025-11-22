@@ -22,8 +22,6 @@ public class BloodBankCustomException extends RuntimeException{
 	protected HttpStatus httpStatus;
 	protected String errorCode;
 	protected String errorMessage;
-//	protected String severity;
-//	protected String category;
 	protected List<ErrorDetails> errors;
 
     public BloodBankCustomException(String messageError, HttpStatus status, String errorCode) {

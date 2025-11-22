@@ -26,5 +26,7 @@ public class SearchDonorDTO {
 	    private Boolean isVerified;
 
 	    private Integer userId;
+	    private String phoneNumber;
+	    private String status;
 
 }
