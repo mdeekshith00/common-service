@@ -3,8 +3,6 @@ package com.common.exception;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,22 +12,19 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.common.vo.BaseVO;
 import com.common.vo.ErrorResponse;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 
 @RestControllerAdvice
-@Order(Ordered.HIGHEST_PRECEDENCE)
-public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
+//@Order(Ordered.HIGHEST_PRECEDENCE)
+public class CustomExceptionHandler  {
 	
 	private ErrorResponse buildErrorDetails(String errorCode, String errorMessage, List<?> errors) {
 		ErrorResponse errorResponse = new ErrorResponse();
 		errorResponse.setMessage(errorMessage);
 		errorResponse.setCode(errorCode);
-//		errorResponse.setCategory(category);
-//		errorResponse.setSeverity(severity);
 		if(errors != null && !errors.isEmpty()) {
 			errorResponse.setErrors(errors);
 		}
@@ -37,13 +32,13 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 
 	@ExceptionHandler(BloodBankRuntimeException.class)
-	public ResponseEntity<BaseVO> handleZmaterRuntimeException(BloodBankRuntimeException ex, WebRequest request) {
+	public ResponseEntity<ErrorResponse> handleBloodRuntimeException(BloodBankRuntimeException ex, WebRequest request) {
 		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getErrors());
 		return ResponseEntity.status(ex.getHttpStatus()).body(errorDetails);
 	}
 
 	@ExceptionHandler(BloodBankBusinessException.class)
-	public ResponseEntity<BaseVO> handleZmaterBusinessException(BloodBankBusinessException ex, WebRequest request) {
+	public ResponseEntity<ErrorResponse> handleBloodBusinessException(BloodBankBusinessException ex ,  WebRequest request) {
 		ErrorResponse errorDetails = buildErrorDetails(ex.getErrorCode(), ex.getErrorMessage(), ex.getErrors());
 		return ResponseEntity.status(ex.getHttpStatus()).body(errorDetails);
 	}
@@ -75,4 +70,13 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
 	    }
+//	  @ExceptionHandler(DataIntegrityViolationException.class)
+//	  public ResponseEntity<?> handleDataIntegrity(DataIntegrityViolationException e) {
+//
+//	      Map<String, Object> body = new HashMap<>();
+//	      body.put("message", "Duplicate phone number or invalid data");
+//	      body.put("status", 400);
+//
+//	      return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+//	  }
 }
