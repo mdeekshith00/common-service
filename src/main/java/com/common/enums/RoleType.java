@@ -1,5 +1,8 @@
 package com.common.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum RoleType {
 	    USER,
 	    ADMIN,                  // User-Service, Blood-Service, Camp-Service
@@ -10,37 +13,18 @@ public enum RoleType {
 	    VOLUNTEER,              // Camp-Service
 	    DONOR,                  // User-Service, Camp-Service, Blood-Service
 	    AUDITOR,                // Blood-Service
-	    SYSTEM  ;           // System/Service role across all microservices
-	
+	    SYSTEM ;           // System/Service role across all microservices
 
+	    private  String roleName;
+	    private  String responsibilities;
+	    private  String permissions;
 
-//	    private final String code;
-//	    private final String responsibilities;
-//	    private final String permissions;
-//
-//	    RoleType(String string, String string2, String string3) {
-//			// TODO Auto-generated constructor stub
-//		}
-//
-//		void UserRole(String code, String responsibilities, String permissions) {
-//	        this.code = code;
-//	        this.responsibilities = responsibilities;
-//	        this.permissions = permissions;
-//	    }
-//
-//	    public String getCode() {
-//	        return code;
-//	    }
-//
-//	    public String getResponsibilities() {
-//	        return responsibilities;
-//	    }
-//
-//	    public String getPermissions() {
-//	        return permissions;
-//	    }
-	
-
-
+	    public boolean checkRole(String checkType) {
+	    	for(RoleType role1 : values()) {
+	    		if(role1.getRoleName().equalsIgnoreCase(checkType))
+	    			return true;
+	    	}
+	    	return false;
+	    }
 
 }
