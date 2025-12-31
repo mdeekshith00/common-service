@@ -2,6 +2,9 @@ package com.common.enums;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import lombok.Getter;
+
+@Getter
 public enum BloodGroupType {
 	 A_POSITIVE("A+"),
 	    A_NEGATIVE("A-"),
@@ -17,15 +20,9 @@ public enum BloodGroupType {
     BloodGroupType(String value) {
         this.value = value;
     }
-
-    @JsonValue // tells Jackson how to serialize
-    public String getValue() {
-        return value;
-    }
-
 	public static boolean isValid(String input) {
 		for(BloodGroupType type : BloodGroupType.values()) {
-			if(type.getDeclaringClass().equals(input))
+			if(type.getValue().equalsIgnoreCase(input))
 				return true;
 		}
 		return false;
