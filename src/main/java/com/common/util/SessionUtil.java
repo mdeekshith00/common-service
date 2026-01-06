@@ -15,6 +15,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.core.env.Environment;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 
 public class SessionUtil {
 
@@ -37,8 +40,11 @@ public class SessionUtil {
 
         String jwt = authHeader.substring(BEARER_PREFIX.length());
 
-        // 🚨 IMPORTANT: use the SAME secret key as JWT generator
-        String SECRET = "your-secret-key";   // Replace with ENV variable
+        Environment env = WebApplicationContextUtils
+                .getRequiredWebApplicationContext(request.getServletContext())
+                .getEnvironment();
+
+        String SECRET = env.getProperty("JWT_SECRET");
 
         Claims claims;
         try {
@@ -47,8 +53,10 @@ public class SessionUtil {
                     .parseClaimsJws(jwt)
                     .getBody();
         } catch (Exception e) {
-            throw new BloodBankBusinessException(ErrorConstants.EXPIRY_JWT_TOKEN,HttpStatus.BAD_REQUEST,ErrorConstants.INVALID_DATA);
+            throw new BloodBankBusinessException(ErrorConstants.EXPIRY_JWT_TOKEN,HttpStatus.BAD_REQUEST,ErrorConstants.INVALID_DATA
+            );
         }
+
 
         SessionResponseVo responseVo = new SessionResponseVo();
         responseVo.setJWt_UserId(String.valueOf(claims.get("userId")));
