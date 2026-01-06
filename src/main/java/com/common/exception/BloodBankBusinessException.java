@@ -8,14 +8,12 @@ public class BloodBankBusinessException extends BloodBankCustomException{
 	 */
 	private static final long serialVersionUID = 5115988062462604998L;
 
-
-	public  BloodBankBusinessException(String errorMessage, HttpStatus status, String errorCode) {
-		super(errorMessage);
+    public BloodBankBusinessException(String errorMessage, HttpStatus status, String errorCode) {
+        super(errorMessage, status, errorCode);
 		this.errorMessage = errorMessage;
 		this.httpStatus = status;
 		this.errorCode = errorCode;
-	}
-
+    }
 	public BloodBankBusinessException(ExceptionKeys exceptionKey) {
 		super(exceptionKey);
 	}

@@ -15,7 +15,7 @@ public class BloodBankRuntimeException extends BloodBankCustomException{
 
 	@Deprecated
 	public BloodBankRuntimeException(String errorMessage, HttpStatus httpStatus, String errorCode) {
-		super(errorMessage);
+		super(errorMessage, httpStatus, errorCode);
 		this.errorMessage = errorMessage;
 		this.httpStatus = httpStatus;
 		this.errorCode = errorCode;
@@ -24,7 +24,7 @@ public class BloodBankRuntimeException extends BloodBankCustomException{
 	@Deprecated
 	public BloodBankRuntimeException(String errorMessage, HttpStatus httpStatus, String errorCode,
 								  List<ErrorDetails> list) {
-		super(errorMessage);
+		super(errorMessage, httpStatus, errorCode);
 		this.errorMessage = errorMessage;
 		this.httpStatus = httpStatus;
 		this.errorCode = errorCode;
