@@ -89,6 +89,7 @@ public class ErrorConstants {
 //		
 //		public static final String DONATION_DETAILS_NOT_FOUND = "";
 //		public static final String DONATION_DETAILS_NOT_FOUND = "";
+		public static final String INVALID_CREDENTIALS = "Invalid Credentials";
 
 		
 

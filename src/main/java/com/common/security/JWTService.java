@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
@@ -14,18 +15,24 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class JWTService {
     
-//    @Value("${jwt.secret}")
-    private final  String secretKey = "q3F6BxZ1CZHb+y4Yw3qgRkz9C5Vql0Yq3zRZbS1yR6w=";
+    @Value("${jwt.secret}")
+    private String secretKey;
 
-    private long expirationMs = 36000;
+    private final long expirationMs = 1000 * 60 * 60 * 10; // 10 hours
 
     private Key getSignKey() {
+//    	  return Keys.hmacShaKeyFor(secretKey.getBytes(StandardCharsets.UTF_8));
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+    @PostConstruct
+    public void debugJwtSecret() {
+        System.out.println("🔥 JWT_SECRET actually loaded = " + secretKey);
     }
 
     // ✅ Create token using claims (user-service only)
@@ -75,4 +82,9 @@ public class JWTService {
             return false;
         }
     }
+
+	public boolean validateToken(String token, UserDetails userDetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
