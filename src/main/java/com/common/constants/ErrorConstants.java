@@ -16,6 +16,7 @@ public class ErrorConstants {
 	public static final String SESSION_VALIDATION_DATA = "Invalid Session Validation data : ";
 	public static final String MISSING_AUTHORIZATION_HEADER = "Missing or invalid Authorization header";
 	public static final String EXPIRY_JWT_TOKEN = "Invalid or expired JWT token";
+	public static final String INVALID_CREDENTIALS = "Invalid Credentials";
 	
 	
 	
@@ -89,7 +90,7 @@ public class ErrorConstants {
 //		
 //		public static final String DONATION_DETAILS_NOT_FOUND = "";
 //		public static final String DONATION_DETAILS_NOT_FOUND = "";
-		public static final String INVALID_CREDENTIALS = "Invalid Credentials";
+		
 
 		
 
